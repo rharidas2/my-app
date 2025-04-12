@@ -1,16 +1,15 @@
-import MainNav from "./MainNav";
-import { Container } from 'react-bootstrap';
-
+import MainNav from './MainNav';
+import ClientOnly from './ClientOnly'; 
 
 export default function Layout(props) {
   return (
     <>
-      <MainNav />
-      <br />
-      <Container>
-          {props.children}
-      </Container>
-      <br />
+      <ClientOnly>
+        <MainNav />
+      </ClientOnly>
+      <main className="container">
+        {props.children}
+      </main>
     </>
   );
 }
